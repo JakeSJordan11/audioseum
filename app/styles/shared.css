@@ -32,18 +32,18 @@ body {
   padding: var(--padding-md);
 }
 .card:hover {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   box-shadow: 1px 1px 8px hsl(0 0% 0% /0.1);
   background-image: linear-gradient(0deg, #da3287, #ffde5e, #da3287, #ffde5e);
   background-size: 100% 300%;
   animation: animateBg 2s infinite linear;
-  transition: all 250ms ease-in-out;
+  transition: border-radius 250ms ease-in-out;
 }
 
 .card:not(hover) {
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xxs);
   box-shadow: 1px 1px 8px hsl(0 0% 0% / 0);
-  transition: all 500ms ease-in-out;
+  transition: border-radius 500ms ease-in-out;
 }
 
 [data-spin]:hover {
@@ -62,31 +62,43 @@ body {
 
 .img-wrapper {
   display: flex;
-  width: 100%;
-  height: auto;
-  transition: box-shadow 250ms;
+  justify-content: center;
 }
 
-.img-wrapper:hover {
+.img-span {
+  display: flex;
+  transition: box-shadow 500ms;
+}
+
+.img-span:hover {
   box-shadow: 2px 4px 8px hsl(0 0% 0% / 1);
   border-radius: 50%;
 }
 
-.img-wrapper:not(hover) {
+.img-span:not(hover) {
   box-shadow: 2px 4px 8px hsl(0 0% 0% / 0);
   border-radius: 50%;
 }
 
 .grid {
   display: grid;
-  width: 100%;
-  /* grid-template-columns: auto auto auto; */
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
 h6,
 h4 {
   line-height: 1em;
+  text-align: center;
+}
+
+.audio-controls {
+  background-color: hsla(0, 0%, 100%, 0.4);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  width: 100vw;
+  bottom: 0px;
+  backdrop-filter: blur(8px);
+  padding: 12px 0px;
 }
 
 @keyframes spin {

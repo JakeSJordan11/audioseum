@@ -1,23 +1,8 @@
-import React from "react";
 import { MockData } from "~/data";
 
 export default function Index() {
-  const contents = await file.text();
-
-  const handle = React.useEffect(() => {
-    let fileHandle;
-    // butOpenFile.addEventListener("click", async () => {
-      // Destructure the one-element array.
-      [fileHandle] = await window.showOpenFilePicker();
-      // Do something with the file handle.
-    });
-    // window.showOpenFilePicker();
-  }, []);
   return (
     <>
-      <button style={{ padding: 48 }} onClick={() => handle}>
-        open file
-      </button>
       <div className="grid">
         {MockData.map((item, index) => (
           <AudioCard
@@ -25,11 +10,12 @@ export default function Index() {
             src={item.src}
             artwork={item.artwork}
             title={item.title}
-            artist={item.artist}
+            // artist={item.artist}
             controls
           />
         ))}
       </div>
+      <AudioController />
     </>
   );
 }
@@ -61,7 +47,9 @@ export function AudioCard({ ...props }: IAudioCard) {
   return (
     <div className="card" key={props.key}>
       <div className="img-wrapper">
-        <img data-spin src={props.artwork} />
+        <div className="img-span">
+          <img data-spin src={props.artwork} height="100%" width="100%" />
+        </div>
       </div>
       <h4>{props.title}</h4>
       <h6>{props.artist}</h6>
@@ -70,22 +58,46 @@ export function AudioCard({ ...props }: IAudioCard) {
   );
 }
 
-// export interface ICanvas {
-//   draw?: Function;
-//   height?: number;
-//   width?: number;
-// }
-// export function Canvas({ height, width }: ICanvas) {
-//   const canvas = React.useRef<HTMLCanvasElement>(null);
-//   React.useEffect(() => {
-//     const ctx = canvas?.current?.getContext("2d");
-//     ctx?.beginPath();
-//     ctx?.arc(0, 0, 150, 0, 2 * Math.PI);
-//     ctx?.fillStyle = "blue";
-//
-//     // ctx?.stroke();
-//     // ctx?.fillStyle = "red";
-//     // ctx?.fill();
-//   });
-//   return <canvas ref={canvas} height={height} width={width} />;
-// }
+export function AudioController() {
+  return (
+    <div className="audio-controls">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 0,
+        }}
+      >
+        <button
+          style={{
+            border: 0,
+            background: 0,
+            padding: 0,
+          }}
+        >
+          ▶
+        </button>
+        <div
+          style={{
+            border: "1px solid hsla(0, 0%, 0%, 1)",
+            borderRadius: 50,
+            width: "100%",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              height: 8,
+              backgroundColor: "darkblue",
+              width: "10%",
+              borderRadius: 50,
+            }}
+          />
+        </div>
+        <div>4:12</div>
+      </div>
+    </div>
+  );
+}
