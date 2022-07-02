@@ -1,0 +1,87 @@
+.card {
+  box-sizing: border-box;
+  width: fit-content;
+  height: auto;
+  padding: var(--padding-md);
+}
+.card:hover {
+  border-radius: var(--radius-sm);
+  box-shadow: 1px 1px 8px hsl(0 0% 0% /0.1);
+  background-image: linear-gradient(0deg, #da3287, #ffde5e, #da3287, #ffde5e);
+  background-size: 100% 300%;
+  animation: animateBg 2s infinite linear;
+  transition: border-radius 250ms ease-in-out;
+}
+
+.card:not(hover) {
+  border-radius: var(--radius-xxs);
+  box-shadow: 1px 1px 8px hsl(0 0% 0% / 0);
+  transition: border-radius 500ms ease-in-out;
+}
+
+[data-spin]:hover {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  transition: all 250ms ease-in-out;
+}
+
+[data-spin]:not(hover) {
+  border-radius: 0%;
+  transition: border-radius 250ms ease-in-out;
+}
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.img-span {
+  display: flex;
+  transition: box-shadow 500ms;
+}
+
+.img-span:hover {
+  box-shadow: 2px 4px 8px hsl(0 0% 0% / 1);
+  border-radius: 50%;
+}
+
+.img-span:not(hover) {
+  box-shadow: 2px 4px 8px hsl(0 0% 0% / 0);
+  border-radius: 50%;
+}
+
+.img-source {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+
+h6,
+h4 {
+  line-height: 1em;
+  text-align: center;
+}

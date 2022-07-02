@@ -1,2 +1,1 @@
-export { Tracks } from "./tracks";
-export { MockData } from "./mockData";
+export * from './TrackData';

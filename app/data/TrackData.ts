@@ -1,0 +1,58 @@
+export const TRACK_DATA = [
+  {
+    id: 1,
+    title: 'A Heart So Heavy',
+    image: require('~/assets/images/AHeartSoHeavy.jpg'),
+    audio: require('~/assets/audio/AHeartSoHeavy.wav'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 2,
+    title: 'Are You In',
+    image: require('~/assets/images/AreYouIn.jpeg'),
+    audio: require('~/assets/audio/AreYouIn.mp3'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 3,
+    title: 'The Bandit',
+    image: require('~/assets/images/TheBandit.jpeg'),
+    audio: require('~/assets/audio/TheBandit.mp3'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 4,
+    title: 'The Great Hope',
+    image: require('~/assets/images/TheGreatHope.jpg'),
+    audio: require('~/assets/audio/TheGreatHope.wav'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 5,
+    title: '160 Rock',
+    image: require('~/assets/images/160Rock.jpeg'),
+    audio: require('~/assets/audio/160Rock.mp3'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 6,
+    title: '6-8-20 Second Try',
+    image: require('~/assets/images/6-8-20SecondTry.jpg'),
+    audio: require('~/assets/audio/6-8-20SecondTry.mp3'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 7,
+    title: 'Modern One V2',
+    image: require('~/assets/images/ModernOneV2.jpg'),
+    audio: require('~/assets/audio/ModernOneV2.mp3'),
+    artist: 'Jake Jordan',
+  },
+  {
+    id: 8,
+    title: 'Your Call',
+    image: require('~/assets/images/YourCall.jpg'),
+    audio: require('~/assets/audio/YourCall.wav'),
+    artist: 'Jake Jordan',
+  },
+];
